@@ -10,13 +10,13 @@ Geef elke keer de correcte query voor volgende vragen:
   antwoord: 6 lijntjes 
  
 - Alle customers vanuit state *WA*<br>
-  querry: ```SELECT * FROM customers WHERE state_province = 'WA'```
+  querry: ```SELECT * FROM customers WHERE state_province = 'WA'```<br>
   antwoord: 2 lijntjes
 
-- Alle customers gesorteerd op voornaam aflopend
-  querry: ```SELECT * FROM customers ORDER BY first_name DESC```
+- Alle customers gesorteerd op voornaam aflopend<br>
+  querry: ```SELECT * FROM customers ORDER BY first_name DESC```<br>
   antwoord: Eerste persoon = Thomas Axen
 
-- Alle customers gesorteerd op achternaam oplopend
-  querry: ```SELECT * FROM customers ORDER BY last_name ASC```
+- Alle customers gesorteerd op achternaam oplopend<br>
+  querry: ```SELECT * FROM customers ORDER BY last_name ASC```<br>
   antwoord: Eerste persoon = Elizabeth Andersen

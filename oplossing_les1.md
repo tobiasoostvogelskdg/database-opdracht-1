@@ -59,11 +59,49 @@ SELECT * FROM products WHERE product_code LIKE '%T%'
 
 - Alle producten met een S in de code moeten een tag krijgen: smart andere producten moeten als tag dumb krijgen <br>
 ``` sql
-  SELECT product_code, 
-  CASE 
-    WHEN product_code LIKE '%S%' then 'smart' £
-    ELSE 'dumb' 
-  END AS 'tag' FROM   products
+SELECT product_code, 
+CASE 
+  WHEN product_code LIKE '%S%' then 'smart' £
+  ELSE 'dumb' 
+END AS 'tag' FROM   products
 ```
 
-- test tekst
+- Alle producten waar de de herbestel hoeveelheid geen even getal is
+```sql
+SELECT * FROM products WHERE minimum_reorder_quantity % 2 = 0 
+```
+
+- Alle producten waar de herbestel hoeveelheid geen veelvoud is van 5
+```sql
+SELECT * FROM products WHERE minimum_reorder_quantity % 5 != 0
+```
+
+- Alle orders die niet betaald zijn (Een order is niet betaald als het gee paid_date heeft)
+```sql
+SELECT * FROM orders WHERE paid_date IS null
+```
+
+- Alle orders die op 5 april 2006 geplaats zijn
+```sql
+SELECT * FROM orders WHERE order_date like '2006-04-05%'
+```
+
+- Alle orders die al verstuurd zijn (Een order is verstuurd als het een shipped_date heeft)
+```sql
+SELECT * FROM orders WHERE shipped_date IS NOT NULL
+```
+
+- Alle orders met een shipping cost van tussen de 6 en 10
+```sql
+SELECT * FROM orders WHERE shipping_fee > 6 AND shipping_fee < 10
+```
+
+- Alle orders die verstuurd worden naar een provincie waar de code van eindigt op L
+```sql
+SELECT * FROM orders WHERE ship_state_province LIKE '%L'
+```
+
+- Alle suppliers met een a in hun voornaam en die als functie Sales Manager of Marketing Manager hebben
+```sql
+SELECT * FROM suppliers WHERE first_name LIKE '%a%' AND (job_title = 'Sales Manager' OR job_title = 'Marketing Manager')
+```

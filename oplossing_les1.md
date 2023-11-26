@@ -170,3 +170,55 @@ SELECT state_province FROM customers WHERE state_province LIKE 'WA' OR state_pro
 UPDATE shippers SET first_name = 'Kevin', last_name = 'Van Oevelen' WHERE company LIKE '%A'
 SELECT * FROM shippers WHERE company LIKE '%A'
 ```
+
+# Opdrachten UPDATES
+Geef elke keer de correcte query voor volgende vragen:
+- Alle producten die als eenheid ergens jars bevatten mogen worden verwijderd
+```sql
+DELETE FROM products WHERE quantity_per_unit LIKE '%jars%'
+```
+
+- Alle producten van de categorie Oil mogen worden verwijderd
+```sql
+DELETE FROM products WHERE category LIKE 'Oil'
+```
+
+- Alle producten met een van deze codes mogen worden verwijderd: NWTS-8 , NWTCM-40 , NWTP-56 , NWTDFN-74
+```sql
+DELETE FROM products WHERE product_code LIKE 'NWTS-8' OR product_code LIKE 'NWTCM-40' OR product_code LIKE 'NWTP-56' OR product_code LIKE 'NWTDFN-74'
+```
+
+- Alle orders ouder dan maart 2006 mogen worden verwijderd
+```sql
+DELETE FROM orders WHERE order_date LIKE '2006-03%' OR order_date LIKE '2006-02%' OR order_date LIKE '2006-01%'
+```
+
+- Alle orders verstuurd naar Milwaukee mogen worden verwijderd
+```sql
+DELETE FROM orders WHERE ship_city LIKE 'Milwaukee'
+```
+
+- Company B mag worden verwijderd bij de shippers
+```sql
+DELETE FROM shippers WHERE company LIKE '%B'
+```
+
+- Alle Marketing Manager's mogen worden verwijderd uit de suppliers
+```sql
+DELETE FROM suppliers WHERE job_title LIKE 'Marketing Manager'
+```
+
+- Alle privileges mogen worden verwijderd
+```sql
+DELETE FROM privileges
+```
+
+- Alle order_details met een even unit_price mogen worden verwijderd op voorwaarde dat ze status 2 hebben of een purchase_order_id hebben
+```sql
+DELETE FROM order_details WHERE unit_price % 2 = 0 AND (status_id = 2 OR purchase_order_id IS NOT NULL)
+```
+
+- Alle invoices met een datum die voor 03/04/2006 ligt mogen worden verwijderd
+```sql
+DELETE FROM invoices WHERE invoice_date < '2006-04-03'
+```

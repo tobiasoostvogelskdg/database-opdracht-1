@@ -22,32 +22,42 @@ SELECT * FROM customers ORDER BY first_name DESC
 ```
 
 - Alle customers gesorteerd op achternaam oplopend<br>
-  query: ```SELECT * FROM customers ORDER BY last_name ASC```<br>
+```sql
+SELECT * FROM customers ORDER BY last_name ASC
+```
 
 - De volledige naam van alle customer in volgend formaat: Voornaam_Achternaam. De titel van de kolom moet full_name zijn <br>
-  query: ```SELECT concat(first_name , '_', last_name) as 'full_name' from customers``` <br>
+```sql
+SELECT concat(first_name , '_', last_name) as 'full_name' from customers
+```
 
 - Alle producten van de categorie Beverages<br>
-  query: ```Alle producten van de categorie Beverages```<br>
+```sql
+SELECT * FROM products WHERE category = 'Beverages' 
+```
 
 - Alle producten waar de standaard kost duurder is dan 5 euro<br>
-  query: ```SELECT * FROM products WHERE category = 'Beverages'```
+```sql
+SELECT * FROM products WHERE category = 'Beverages'
+```
 
 - Alle producten waar de lijst prijs lager is dan 20 euro of 20 euro is<br>
-  query: ```SELECT * FROM products WHERE list_price <= 20```
+```sql
+SELECT * FROM products WHERE list_price <= 20
+```
 
 - De prijs van alle producten als er 70% korting zou zijn op de standaard kost<br>
-  query: ```SELECT product_name, ((list_price / 100) * 30) AS 'price'  FROM products```<br
+```sql
+SELECT product_name, ((list_price / 100) * 30) AS 'price'  FROM products
+```
 
 - Alle producten die een T in de code hebben moeten worden geselecteerd<br>
-  query:
 ```sql
 SELECT * FROM products WHERE product_code LIKE '%T%' 
 ```
 <br>
 
 - Alle producten met een S in de code moeten een tag krijgen: smart andere producten moeten als tag dumb krijgen <br>
-  query: 
 ``` sql
   SELECT product_code, 
   CASE 

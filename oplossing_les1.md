@@ -105,3 +105,24 @@ SELECT * FROM orders WHERE ship_state_province LIKE '%L'
 ```sql
 SELECT * FROM suppliers WHERE first_name LIKE '%a%' AND (job_title = 'Sales Manager' OR job_title = 'Marketing Manager')
 ```
+
+# Opdrachten UPDATES
+Geef elke keer de correcte query voor volgende vragen. Maak ook telkens een SELECT query om je resultaat te controleren.
+
+- Alle producten met een standaard kost lager dan 10 moeten bij discontinued een true waarde krijgen
+```sql
+UPDATE products SET discontinued = true WHERE standard_cost < 10
+```
+  controle:
+```sql
+SELECT * FROM products WHERE standard_cost < 10
+```
+
+- Alle producten met een C in hun code moeten als minimum herbestelhoeveelheid + 5 bij het huidige aantal krijgen
+```sql
+UPDATE products SET minimum_reorder_quantity = minimum_reorder_quantity + 5 WHERE product_code LIKE '%C%'
+```
+  controle:
+```sql
+SELECT * FROM products WHERE product_code LIKE '%C%'
+```

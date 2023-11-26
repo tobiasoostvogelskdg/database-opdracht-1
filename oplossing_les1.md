@@ -42,5 +42,4 @@ Geef elke keer de correcte query voor volgende vragen:
     WHEN product_code LIKE '%S%' then 'smart' £
     ELSE 'dumb' 
   END AS 'tag' FROM   products
-```sql
-<br>
+```

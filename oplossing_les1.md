@@ -35,4 +35,11 @@ Geef elke keer de correcte query voor volgende vragen:
   query: ```SELECT * FROM products WHERE product_code LIKE '%T%' ```<br>
 
 - Alle producten met een S in de code moeten een tag krijgen: smart andere producten moeten als tag dumb krijgen <br>
-  query: ```SELECT product_code, CASE WHEN product_code LIKE '%S%' then 'smart' ELSE 'dumb' END AS 'tag' FROM   products```<br>
+  query: 
+  ```
+  SELECT product_code, 
+  CASE 
+    WHEN product_code LIKE '%S%' then 'smart' £
+    ELSE 'dumb' 
+  END AS 'tag' FROM   products
+  ```sql <br>

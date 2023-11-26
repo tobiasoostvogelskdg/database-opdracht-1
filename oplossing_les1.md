@@ -222,3 +222,30 @@ DELETE FROM order_details WHERE unit_price % 2 = 0 AND (status_id = 2 OR purchas
 ```sql
 DELETE FROM invoices WHERE invoice_date < '2006-04-03'
 ```
+
+# Opdrachten INSERTS
+
+- Voeg een customer toe met eigen verzonnen gegevens (Alle kolommen moeten een waarde hebben)
+```sql
+INSERT INTO customers (company, last_name, first_name, email_address, job_title, business_phone, home_phone, mobile_phone, fax_number, address, city, state_province, zip_postal_code, country_region, web_page, notes, attachments) VALUES ('kdg', 'Oostvogels', 'Tobias', 'tobias.oostvogels@student.kdg.be', 'student', 0123, 4567, 8910, 1112, 'Westdoor', 'Wuustwezel', 'Antwerp', 2990, 'BE', 'portfilio.tobias.oostvogels.nxtmediatech.eu', 'test', 'no')
+```
+
+- Voeg een customer toe met volgende gegevens: 
+```sql
+INSERT INTO customers (first_name, last_name, job_title) VALUES ('Ronny', 'Ronssens', 'Developer')
+```
+
+- Voeg 2 suppliers toe met één query. Volgende gegevens 
+```sql
+INSERT INTO suppliers (company, first_name, last_name, web_page) VALUES ('GeNx', 'Sam', 'Serrien', 'genx.be'), ('Meteor', 'Alessandro', 'Aussems', 'meteor.be')
+```
+
+- Voeg een product toe met volgende gegevens: 
+```sql
+INSERT INTO products (product_code, product_name, standard_cost, list_price, category) VALUES ('APPLE-13', 'Iphone 13', 899.99, 950.52, 'Iphones')
+```
+
+- Voeg een order toe met volgende gegevens: 
+```sql
+INSERT INTO orders (order_date, ship_address, taxes, payment_type) VALUES ('2023-11-26', 'Selesianenlaan Hoboken', 120.45, 'Payconiq')
+```

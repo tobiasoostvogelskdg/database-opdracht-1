@@ -36,10 +36,12 @@ Geef elke keer de correcte query voor volgende vragen:
 
 - Alle producten met een S in de code moeten een tag krijgen: smart andere producten moeten als tag dumb krijgen <br>
   query: 
-```
+``` sql
   SELECT product_code, 
   CASE 
     WHEN product_code LIKE '%S%' then 'smart' £
     ELSE 'dumb' 
   END AS 'tag' FROM   products
-```sql
+```
+
+-test tekst

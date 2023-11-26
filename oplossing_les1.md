@@ -1,17 +1,25 @@
 # Opdrachten SELECTS
 Geef elke keer de correcte query voor volgende vragen:
 
-- Alle customers vanuit Los Angelas<br>
-  query: ```SELECT * from customers where city LIKE 'Los%'``` <br>
+- Alle customers vanuit Los Angelas<br> 
+```sql
+SELECT * from customers where city LIKE 'Los%'
+```
 
 - Alle customers die eigenaar zijn<br>
-  query:  ```SELECT * from customers where job_title like 'owner'```<br>
+```sql
+SELECT * from customers where job_title like 'owner'
+```
  
 - Alle customers vanuit state *WA*<br>
-  query: ```SELECT * FROM customers WHERE state_province = 'WA'```<br>
+```sql
+SELECT * FROM customers WHERE state_province = 'WA'
+```
 
 - Alle customers gesorteerd op voornaam aflopend<br>
-  query: ```SELECT * FROM customers ORDER BY first_name DESC```<br>
+```sql
+SELECT * FROM customers ORDER BY first_name DESC
+```
 
 - Alle customers gesorteerd op achternaam oplopend<br>
   query: ```SELECT * FROM customers ORDER BY last_name ASC```<br>
@@ -32,7 +40,11 @@ Geef elke keer de correcte query voor volgende vragen:
   query: ```SELECT product_name, ((list_price / 100) * 30) AS 'price'  FROM products```<br
 
 - Alle producten die een T in de code hebben moeten worden geselecteerd<br>
-  query: ```SELECT * FROM products WHERE product_code LIKE '%T%' ```<br>
+  query:
+```sql
+SELECT * FROM products WHERE product_code LIKE '%T%' 
+```
+<br>
 
 - Alle producten met een S in de code moeten een tag krijgen: smart andere producten moeten als tag dumb krijgen <br>
   query: 
@@ -44,4 +56,4 @@ Geef elke keer de correcte query voor volgende vragen:
   END AS 'tag' FROM   products
 ```
 
--test tekst
+- test tekst
